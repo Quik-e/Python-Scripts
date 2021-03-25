@@ -40,8 +40,8 @@ email = WebDriverWait(chrometab,10).until(EC.element_to_be_clickable((By.ID, 'lo
 passw = WebDriverWait(chrometab,10).until(EC.element_to_be_clickable((By.ID, 'loginform-password')))
 email.clear() # Clearing fields just in case
 passw.clear()
-email.send_keys("quiquecametti97@gmail.com")
-passw.send_keys("StratocasterDR97")
+email.send_keys("USERNAME")
+passw.send_keys("PASSWORD")
 loginButton = WebDriverWait(chrometab,10).until(EC.element_to_be_clickable((By.ID, 'login'))).click()
 
 # Picking the second shift two days from now
