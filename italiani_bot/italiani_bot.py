@@ -6,9 +6,11 @@ import win32process
 import pyautogui
 import time
 import sys
+from pathlib import Path
+
 
 def open_whatsapp():
-    EXE_NAME = r'C:\Users\quiqu\AppData\Local\WhatsApp\WhatsApp.exe'
+    EXE_NAME = str(Path.home()) + r'\AppData\Local\WhatsApp\WhatsApp.exe'
     si = win32process.STARTUPINFO()
     si.dwFlags = win32con.STARTF_USESHOWWINDOW
     si.wShowWindow = win32con.SW_MAXIMIZE
@@ -48,6 +50,8 @@ def keep_vcalling():
             time.sleep(0.5)
 
 if (__name__ == "__main__"):
+    contact = input("Ingrese nombre o numero del contacto a llamar: ")
     open_whatsapp()
-    vcall_contact("Consolato Generale Italia Buenos Aires")
+    vcall_contact(contact)
+    #vcall_contact("Consolato Generale Italia Buenos Aires")
     keep_vcalling()
